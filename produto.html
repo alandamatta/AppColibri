@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta charset="utf-8">
+     <title>App Colibri Móveis</title>
+     <link rel="stylesheet" href="icons/material.css">
+     <link rel="stylesheet" href="css/materialize.min.css">
+     <link rel="stylesheet" href="css/estilos.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/animsition.min.css">
+     <!--
+     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+     <link rel="stylesheet" href="css/jquery.mobile.theme-1.4.5.min.css">
+     <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css">
+-->
+
+<style media="screen">
+.tabs .indicator {
+     background-color: #76C04D;
+}
+</style>
+
+</head>
+
+<body>
+     <!--Imports-->
+     <script src="js/jquery-3.1.1.min.js"></script>
+     <script src="js/jquery.sidebar.min.js"></script>
+     <script src="js/materialize.min.js"></script>
+     <script src="js/animsition.min.js"></script>
+
+     <!--Fim dos imports-->
+
+     <!--Barra superior-->
+     <div class="topo-fixo z-depth-1">
+          <!-- "desenho" da barra superior"-->
+          <nav style="background-color: #76C04D">
+               <ul id="slide-out" class="side-nav z-depth-5" style="color: BBD6AB">
+                    <li>
+                         <div class="center-align">
+                              <img src="img/logo.png" class="responsive-img logo-menu"/>
+                         </div>
+                    </li>
+                    <li><a href="index.html">Menu Principal</a></li>
+                    <li><a href="nossos-produtos.html">Produtos</a></li>
+                    <li><a href="conheca-a-colibri.html">Conheça a colibri</a></li>
+                    <li><a href="fale-conosco.html">Fale conosco</a></li>
+                    <li id="fechar-menu"><a class="red lighten-1 ">Fechar menu</a></li>
+               </ul>
+               <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+          </nav>
+          <!-- fim do "desenho" da barra superior"-->
+
+
+          <!-- "Script que habilita o menu retrátil da barra superior"-->
+          <script type="text/javascript">
+          $('.button-collapse').sideNav({
+               menuWidth: 225,//Tamanho do meu que aparecerá
+               edge: 'left',//lado que o menu aparecerá (default: left)
+               closeOnClick: true,//fecha o menu ao pressionar fora do menu
+               draggable: false//abrir menu ao arrastar da dir/esq para esq/dir
+          });
+          $('#fechar-menu').sideNav('hide');
+          </script>
+          <!-- Fim do script que habilita o menu retrátil da barra superior"-->
+     </div>
+     <!--Final da barra superior-->
+
+     <main class="fadeIn main-telas">
+          <!--O html é gerando somente após leitura do arquivo json, para nao ocorrer o delay
+          de rendereização de conteúdo-->
+
+          <div id="fotos">
+
+          </div>
+
+
+          <div id="tabs">
+
+          </div>
+
+          <div id="tabs-conteudo">
+
+          </div>
+     </main>
+
+     <footer class="page-footer rodape-fixo">
+          <div class="container">
+               <div class="center-align">
+                    <div class="container">
+                         <a class="animsition-link" href="nossos-produtos.html"><i class="fa fa-chevron-left fa-1x redes-sociais">Voltar</i></a>
+                    </div>
+               </div>
+          </div>
+     </footer>
+     <script>
+     var parametro = window.location.href.split("?")[1].split("=")[1];
+     console.log(parametro);
+     var produto;
+     var i;
+     $(document).ready(function(){
+          /*
+          $(".animsition").animsition({
+          inClass: 'fade-in',
+          outClass: 'fade-out',
+          inDuration: 1500,
+          outDuration: 800,
+          linkElement: '.animsition-link',
+          // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+          loading: true,
+          loadingParentElement: 'body', //animsition wrapper element
+          loadingClass: 'animsition-loading',
+          timeout: false,
+          timeoutCountdown: 5000,
+          onLoadEvent: true,
+          browser: [ 'animation-duration', '-webkit-animation-duration'],
+          // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+          // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+          overlay : false,
+          overlayClass : 'animsition-overlay-slide',
+          overlayParentElement : 'body',
+          transition: function(url){ window.location.href = url; }
+     });
+     */
+
+     $.getJSON('json/produtos.js', function(data){
+          autoplay();
+
+          //procura por produto no arquivo json
+          for(i=0; i<data.produtos.length; i++){
+               if(data.produtos[i].id == parametro){
+                    produto = data.produtos[i];
+
+               }
+          }
+
+          $("#fotos").append(
+               '<div>' +
+               '<div id="slide-fotos" class="carousel carousel-slider center z-depth-1" data-indicators="true">' +
+
+               '</div>' +
+
+               '<div class="center" >' +
+               '<div class="chip">' +
+               '<a id="titulo-produto" class="white-text"></a>' +
+               '</div>' +
+               '</div>' +
+               '</div>'
+          );
+
+          var p3 = document.getElementById("titulo-produto");
+          p3.textContent = produto.nome + " - " + "CÓD." + produto.codigo;
+          var estruturaHtmlFotos = "";
+
+          for(i=0; i<produto.fotos.length; i++){
+               estruturaHtmlFotos += '<a class="carousel-item" href="imagem.html?dir='+produto.fotos[i].diretorio+
+               '&id='+parametro+'">' +
+               '<img src="'+produto.fotos[i].diretorio+'">'+
+               '</img>' +
+               '</a>';
+          }
+          $("#slide-fotos").append(estruturaHtmlFotos);
+          $('.carousel.carousel-slider').carousel({full_width: true});
+
+          $("#tabs").append(
+               '<div class="container">' +
+               '<ul id="tabs" class="tabs" style="background-color: #eeeeee; height: 35px">' +
+               '<li class="tab col s3"><a class="black-text" style="font-size:10px" class="active" href="#tab-dimencao">Dimenção</a></li>' +
+               '<li class="tab col s3"><a class="black-text" style="font-size:10px" href="#tab-cores">Cores</a></li>' +
+               '<li class="tab col s3"><a class="black-text" style="font-size:10px" href="#tab-caracteristicas">Características</a></li>' +
+               '</ul>' +
+               '</div>'
+          );
+
+          $("#tabs-conteudo").append(
+               '<div id="desc-tabs" class="container">' +
+               '<div id="tab-dimencao" class="col s12"></div>' +
+               '<div id="tab-cores" class="col s12"></div>' +
+               '<div id="tab-caracteristicas" class="col s12"></div>' +
+               '</div>'
+          );
+
+          function autoplay() {
+               $('.carousel').carousel('next');
+               setTimeout(autoplay, 6000);
+          }
+
+          $(document).ready(function(){
+               $('ul.tabs').tabs();
+          });
+
+          $("#tab-dimencao").append(
+               '<table style="font-size:10px">' +
+               '<thead>' +
+               '<tr>' +
+               '<th>Altura</th>' +
+               '<th>Largura</th>' +
+               '<th>Profundidade</th>' +
+               '</tr>' +
+               '</thead>' +
+               '<tbody>' +
+               '<tr>' +
+               '<td>'+ produto.altura +'mm</td>' +
+               '<td>'+ produto.largura +'mm</td>' +
+               '<td>'+ produto.profundidade +'mm</td>' +
+               '</tr>' +
+               '</tbody>' +
+               '</table>'
+          );
+
+          for(i=0; i<produto.cores.length; i++){
+               $("#tab-cores").append(
+                    '<p style="font-size:12px"> -'+ produto.cores[i].descricao +'</p>'
+               );
+          }
+
+          for(i=0; i<produto.caracteristicas.length; i++){
+               $("#tab-caracteristicas").append(
+                    '<p style="font-size:12px"> -'+ produto.caracteristicas[i].descricao +'</p>'
+               );
+          }
+
+
+     });
+});
+</script>
+</body>
+</html>

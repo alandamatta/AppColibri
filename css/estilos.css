@@ -1,0 +1,219 @@
+.tabs .indicator {
+     background-color: white;
+}
+
+body{
+     background-color: #eeeeee;
+     display: flex;
+     min-height: 100vh;
+     flex-direction: column;
+}
+
+main {
+     flex: 1 0 auto;
+}
+
+.titulo{
+     font-size: 1.3rem;
+     margin-left: 5%;
+     margin-right: auto;
+}
+
+.section{
+
+}
+
+.logo{
+     padding-left: 6%;
+     padding-right: 6%;
+     padding-top: 4%;
+     padding-bottom: 1%;
+     width: 80%;
+     background-color: #eeeeee;
+     margin-bottom: 3%;
+}
+
+.logo-menu{
+     padding-left: 6%;
+     padding-right: 6%;
+     padding-top: 9%;
+     padding-bottom: 1%;
+     width: 80%;
+     margin-bottom: 3%;
+}
+
+.btn-menu{
+     border-radius: 1px;
+     background-color: #76C04D;
+     margin-top: 7%;
+     width: 64%;
+}
+
+.btn-fechar-foto{
+     border-radius: 1px;
+     background-color: #76C04D;
+     margin-top: 7%;
+     width: 64%;
+}
+
+
+
+.btn.btn-menu:hover, .btn-large:hover{
+     background-color: #7FD152;
+}
+
+.btn.btn-fechar-foto:hover, .btn-large:hover{
+     background-color: #e57373;
+}
+
+.redes-sociais{
+     padding-right: 6%;
+     padding-left: 6%;
+     padding-bottom: 4%;
+     color: #eeeeee;
+}
+
+footer.page-footer{
+     background-color: #76C04D;
+     margin-top: 10px;
+}
+
+nav.barra-superior{
+     background-color: #76C04D;
+}
+
+.panel-conacolibri{
+     width: 90%;
+}
+
+main{
+     margin-top: 16.5%;
+}
+
+.card-colibri-1{
+     background-color: #eeeeee;
+}
+
+.card-size{
+     width: 70%;
+}
+
+img.imagem-colibri{
+     padding-top: 8%;
+     padding-bottom: 8%;
+     padding-left: 8%;
+     padding-right: 8%;
+     height: 72%;
+     width: 80%;
+}
+
+.topo-fixo{
+     position: fixed;
+     top: 0;
+     width: 100%;
+     z-index: 999;
+}
+
+.rodape-fixo{
+     position: fixed;
+     bottom:  0;
+     width: 100%;
+}
+
+.a-colibri{
+     background-image: url(img/logo.png);
+}
+
+menu-bars{
+     width: 18%;
+}
+
+btn-bars{
+     border-radius: 3.5px;
+     background-color: #76C04D;
+     margin-top: 7%;
+}
+
+main.main-telas{
+     margin-top: 68px;
+}
+
+#card-produtos{
+     margin-top: 20px;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating){
+     color: #76C04D;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover {
+     color: #B6ED98;
+}
+
+.card-content.produtos{
+     padding-left: 1px !important;
+     padding-right: 1px !important;
+     padding-top: 2px !important;
+     padding-bottom: 2px !important;
+     background-color: #76C04D;
+}
+
+.card-content.produtos{
+     border-radius: 0px
+}
+
+.card-action{
+     padding-top: 4px !important;
+     padding-bottom: 4px !important;
+}
+
+p.nome-produto{
+     font-size: 12px !important;
+     color: white !important;
+}
+
+a.link-ver-produto{
+     font-size: 11px;
+}
+
+#preloader {
+     position: absolute;
+     left: 0px;
+     right: 0px;
+     bottom: 0px;
+     top: 0px;
+     background: #ccc;
+}
+
+body.corpo-produtos{
+     margin-bottom: 40px;
+}
+
+.chip{
+     background-color: #76C04D;
+     margin-top: 10px;
+}
+
+@-webkit-keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@-moz-keyframes fadeIn {
+0% { opacity: 0;}
+100% { opacity: 1; }
+}
+@-o-keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+
+.fadeIn {
+-webkit-animation: fadeIn 2.3s ease-in-out;
+-moz-animation: fadeIn 2.3s ease-in-out;
+-o-animation: fadeIn 2.3s ease-in-out;
+animation: fadeIn 2.3s ease-in-out;
+}

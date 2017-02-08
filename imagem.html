@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1, height=device-height">
+     <meta charset="utf-8">
+     <title>App Colibri Móveis</title>
+     <link rel="stylesheet" href="icons/material.css">
+     <link rel="stylesheet" href="css/materialize.min.css">
+     <link rel="stylesheet" href="css/estilos.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+
+<body>
+     <script src="js/jquery-3.1.1.min.js"></script>
+     <script src="js/panzoom.js"></script>
+     <script src="js/jquery.sidebar.min.js"></script>
+     <script src="js/materialize.min.js"></script>
+     <script src="js/jquery.mobile-1.4.5.min.js"></script>
+     <!--Barra superior-->
+     <div class="topo-fixo z-depth-1">
+          <!-- "desenho" da barra superior"-->
+          <nav style="background-color: #76C04D">
+               <ul id="slide-out" class="side-nav z-depth-5" style="color: BBD6AB">
+                    <li>
+                         <div class="center-align">
+                              <img src="img/logo.png" class="responsive-img logo-menu"/>
+                         </div>
+                    </li>
+                    <li><a href="index.html">Menu Principal</a></li>
+                    <li><a href="nossos-produtos.html">Produtos</a></li>
+                    <li><a href="conheca-a-colibri.html">Conheça a colibri</a></li>
+                    <li><a href="fale-conosco.html">Fale conosco</a></li>
+                    <li id="fechar-menu"><a class="red lighten-1 ">Fechar menu</a></li>
+               </ul>
+               <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+          </nav>
+          <!-- fim do "desenho" da barra superior"-->
+
+
+          <!-- "Script que habilita o menu retrátil da barra superior"-->
+          <script type="text/javascript">
+          $('.button-collapse').sideNav({
+               menuWidth: 225,//Tamanho do meu que aparecerá
+               edge: 'left',//lado que o menu aparecerá (default: left)
+               closeOnClick: true,//fecha o menu ao pressionar fora do menu
+               draggable: false//abrir menu ao arrastar da dir/esq para esq/dir
+          });
+          $('#fechar-menu').sideNav('hide');
+          </script>
+          <!-- Fim do script que habilita o menu retrátil da barra superior"-->
+     </div>
+     <!--Final da barra superior-->
+
+     <main class="fadeIn main-telas">
+          <div class="panzoom-parent">
+               <div id="imagem">
+
+               </div>
+          </div>
+     </main>
+
+     <div id="botao-fechar" class="container">
+
+     </div>
+
+     <script>
+     var url = window.location.href.split("?")[1].split("&");
+     var parametros = {};
+     url.forEach(function (parte) {
+          var chaveEValor = parte.split("=");
+          var chave = chaveEValor[0];
+          var valor = chaveEValor[1];
+          parametros[chave] = valor;
+     });
+     var diretorioFoto = parametros.dir;
+     var idDoProduto = parametros.id;
+     console.log(idDoProduto);
+     var i;
+     $(document).ready(function(){
+          $("#imagem").append('<img id="img1" class="responsive-img" src="'+diretorioFoto+'" width="2048" height="2048"/>');
+          $("#botao-fechar").append(
+               '<div class="row">'+
+               '<a class="btn btn-fechar-foto center red lighten-1 col s12 waves-effect"' +
+               'href="produto.html?id='+idDoProduto+'">Fechar foto'+
+               '<i class="material-icons left ">close</i>' +
+               '</a>' +
+               '</div>'
+          );
+
+          $("#img1").panzoom({
+               panOnlyWhenZoomed: true,
+               minScale: 1,
+               contain: 'automatic'
+          });
+
+     });
+     $('#img1').panzoom({
+          maxScale: "#img1".naturalWidth / "#img1".clientWidth
+     });
+
+     $( window ).on( "orientationchange", function( event ) {
+          $("#img1").panzoom({
+               panOnlyWhenZoomed: true,
+               minScale: 1,
+               contain: 'automatic'
+          });
+          $("#img1").panzoom("reset");
+     });
+
+     </script>
+</body>
+</html>

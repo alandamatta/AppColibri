@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title>App Colibri Móveis</title>
+<link rel="stylesheet" href="icons/material.css">
+<link rel="stylesheet" href="css/materialize.min.css">
+<link rel="stylesheet" href="css/estilos.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+</head>
+
+<body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/materialize.min.js"></script>
+<!--Barra superior-->
+<div class="topo-fixo z-depth-1">
+     <!-- "desenho" da barra superior"-->
+     <nav style="background-color: #76C04D">
+          <ul id="slide-out" class="side-nav z-depth-5" style="color: BBD6AB">
+               <li>
+                    <div class="center-align">
+                           <img src="img/logo.png" class="responsive-img logo-menu"/>
+                    </div>
+               </li>
+               <li><a href="index.html">Menu Principal</a></li>
+               <li><a href="nossos-produtos.html">Produtos</a></li>
+               <li><a href="conheca-a-colibri.html">Conheça a colibri</a></li>
+               <li><a href="fale-conosco.html">Fale conosco</a></li>
+               <li id="fechar-menu"><a class="red lighten-1 ">Fechar menu</a></li>
+          </ul>
+          <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+     </nav>
+     <!-- fim do "desenho" da barra superior"-->
+
+
+     <!-- "Script que habilita o menu retrátil da barra superior"-->
+     <script type="text/javascript">
+     $('.button-collapse').sideNav({
+          menuWidth: 225,//Tamanho do meu que aparecerá
+          edge: 'left',//lado que o menu aparecerá (default: left)
+          closeOnClick: true,//fecha o menu ao pressionar fora do menu
+          draggable: false//abrir menu ao arrastar da dir/esq para esq/dir
+     });
+     $('#fechar-menu').sideNav('hide');
+     </script>
+     <!-- Fim do script que habilita o menu retrátil da barra superior"-->
+</div>
+<!--Final da barra superior-->
+<main class="main-telas">
+     <div class="center-align">
+          <img class="responsive-img logo" src="img/logo.png"/>
+          <div class="container">
+               A <strong>Colibri</strong> é uma empresa idealizada e construída na cumplicidade do que se pensa, na humildade de caminhar juntos com o que se faz. Atuamos na fabricação de mobiliário residencial, produzindo racks, estantes e dormitórios que aliam design moderno, qualidade de matéria prima e acabamento. Conta com uma moderna estrutura industrial, com maquinário de última geração e profissionais capacitados, que são responsáveis pelo alto padrão de qualidade dos produtos e serviços. Esta qualidade faz com que estejamos presentes em todo o Brasil e em mais de 10 países, buscando sempre a satisfação dos clientes e consumidores, aliada aos compromissos de gerar oportunidades e crescimento aos nossos colaboradores e parceiros, preservando sempre o meio ambiente.
+          </div>
+     </div>
+     <div class="center-align">
+          <div class="container card-size">
+               <div class="card card-colibri-1 z-depth-1">
+                    <div class="card-image">
+                         <img class="activator imagem-colibri" src="img/logo.png">
+                    </div>
+                    <div class="card-content">
+                         <span class="card-title activator grey-text text-darken-4">Colibri em 1991</span>
+                    </div>
+                    <div class="card-reveal">
+                         <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                         <p>Fundada em 09 de janeiro de 1991, a Colibri Móveis do Brasil atuava na produção de mesas e cadeiras em madeira natural de cerejeira.</p>
+                    </div>
+               </div>
+               <div class="card card-colibri-1 z-depth-1">
+                    <div class="card-image">
+                         <img class="activator imagem-colibri" src="img/1995.jpg">
+                    </div>
+                    <div class="card-content">
+                         <span class="card-title activator grey-text text-darken-4">Colibri em 1995</span>
+                    </div>
+                    <div class="card-reveal">
+                         <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                         <p>Em 1995 esta linha cedeu lugar à produção de Racks e Estantes. Neste ano a Colibri instalou-se em uma sede própria. Em 2003, mudou-se para a nova unidade fabril, iniciando também a produção de dormitórios.</p>
+                    </div>
+               </div>
+
+               <div class="card card-colibri-1 z-depth-1">
+                    <div class="card-image">
+                         <img class="activator imagem-colibri" src="img/2005.jpg">
+                    </div>
+                    <div class="card-content">
+                         <span class="card-title activator grey-text text-darken-4">Colibri em 2006</span>
+                    </div>
+                    <div class="card-reveal">
+                         <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                         <p>Em 2006 iniciou-se um amplo plano de reestruturação dos processos internos de gestão, buscando adaptar as melhores ferramentas administrativas ao negócio, implantação de softwares de alto desempenho e o desenvolvimento de novos departamentos. Tudo isso para se preparar para o crescimento futuro.</p>
+                    </div>
+               </div>
+
+               <div class="card card-colibri-1 z-depth-1">
+                    <div class="card-image">
+                         <img class="activator imagem-colibri" src="img/2007-2008.jpg">
+                    </div>
+                    <div class="card-content">
+                         <span class="card-title activator grey-text text-darken-4">Colibri em 2007</span>
+                    </div>
+                    <div class="card-reveal">
+                         <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                         <p>Em 2007, uma nova ampliação do parque fabril, elevou a capacidade de produção e estocagem de matérias-primas e produtos acabados, além do investimento em novas máquinas.</p>
+                    </div>
+               </div>
+
+               <div class="card card-colibri-1 z-depth-1">
+                    <div class="card-image">
+                         <img class="activator imagem-colibri" src="img/2009-2010.jpg">
+                    </div>
+                    <div class="card-content">
+                         <span class="card-title activator grey-text text-darken-4">Colibri em 2009</span>
+                    </div>
+                    <div class="card-reveal">
+                         <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                         <p>Sem cessar os investimentos, em 2009, além da importação de mais novas e modernas máquinas para o processo produtivo, inauguramos uma última ampliação no parque fabril.
+                              Além da estrutura física, a empresa sempre se preocupou em investir na qualificação dos seus profissionais, tanto no nível técnico quanto gerencial. Ainda em 2009 iniciamos um treinamento de líderes que visa ampliar ainda mais a capacidade da empresa de inovar sempre, característica marcante que a acompanha durante os anos.</p>
+                         </div>
+                    </div>
+
+                    <div class="card card-colibri-1 z-depth-2">
+                         <div class="card-image">
+                              <img class="activator imagem-colibri" src="img/logo.png">
+                         </div>
+                         <div class="card-content">
+                              <span class="card-title activator grey-text text-darken-4">Colibri Atualmente</span>
+                         </div>
+                         <div class="card-reveal">
+                              <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                              <p>Atualmente a Colibri tem 52.000m² e conta com uma equipe especializada de 130 colaboradores e uma produção de aproximadamente 30.000 peças por mês.</p>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </main>
+     <footer class="page-footer rodape-fixo z-depth-5">
+          <div class="container">
+               <div class="center-align">
+                    <div class="container">
+                         <a href="index.html"><i class="fa fa-home fa-1x redes-sociais">Menu</i></a>
+                    </div>
+               </div>
+          </div>
+     </footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta charset="utf-8">
+     <title>App Colibri Móveis</title>
+     <link rel="stylesheet" href="icons/material.css">
+     <link rel="stylesheet" href="css/materialize.min.css">
+     <link rel="stylesheet" href="css/estilos.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+
+<body>
+     <script src="js/jquery-3.1.1.min.js"></script>
+     <script src="js/materialize.min.js"></script>
+     <main class="main-telas">
+          <div class="container">
+               <div class="center-align">
+
+                    <i class="fa fa-map-marker" aria-hidden="true"></i> Nosso Endereço
+                    <div class="divider"></div>
+                    <br/>
+                    Rua Rouxinol, 5530<br/>
+                    Parque Industrial XI <br/>
+                    Arapongas - PR
+                    <br/>
+                    <br/>
+                    <br/>
+                    <i class="fa fa-phone" aria-hidden="true"></i> Contatos
+                    <div class="divider"></div>
+                    <br/>
+                    (43) +55 43 3275-8600<br/>
+                    <a onclick="abrirEmail()">sac@colibrimoveis.com.br</a>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <i class="fa fa-exclamation" aria-hidden="true"></i>
+                     Está com problemas no aplicativo?
+                    <div class="divider"></div>
+                    <br/>
+                    <a onclick="abrirEmailSuporte()">Mande-nos um e-mail</a> e explique o seu problema!
+               </div>
+          </div>
+     </main>
+     <footer class="page-footer rodape z-depth-5">
+          <div class="container">
+               <div class="center-align">
+                    <div class="container">
+                         <a href="index.html"><i class="fa fa-home fa-1x redes-sociais">Menu</i></a>
+                    </div>
+               </div>
+          </div>
+     </footer>
+     <script src="cordova.js"></script>
+     <script type="text/javascript">
+     function abrirEmail(){
+          cordova.InAppBrowser.open('mailto:sac@colibrimoveis.com.br', '_system', 'location=no');
+     }
+     function abrirEmailSuporte(){
+          cordova.InAppBrowser.open('mailto:alan.matta@colibrimoveis.com.br', '_system', 'location=no');
+     }
+     </script>
+</body>
+</html>

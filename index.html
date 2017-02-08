@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta charset="utf-8">
+     <title>App Colibri Móveis</title>
+     <link rel="stylesheet" href="icons/material.css">
+     <link rel="stylesheet" href="css/materialize.min.css">
+     <link rel="stylesheet" href="css/estilos.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+</head>
+
+<body>
+     <script src="js/jquery-3.1.1.min.js"></script>
+     <script src="js/materialize.min.js"></script>
+     <main>
+          <div class="center-align">
+               <img src="img/logo.png" class="responsive-img logo"/>
+          </div>
+          <div class="center-align">
+               <a class="btn btn-menu z-depth-1 " href="nossos-produtos.html">Produtos</a>
+          </div>
+          <div class="center-align">
+               <a class="btn btn-menu z-depth-1 " href="nossos-canais.html">Nossos Canais</a>
+          </div>
+          <div class="center-align">
+               <a class="btn btn-menu z-depth-1 " href="conheca-a-colibri.html">Conheça a Colibri</a>
+          </div>
+          <div class="center-align">
+               <a class="btn btn-menu z-depth-1 " href="fale-conosco.html">Fale conosco</a>
+          </div>
+     </main>
+     <footer class="page-footer rodape z-depth-5">
+          <div class="container">
+               <div class="center-align">
+                    <div class="containe">
+                         <a onclick="abrirFacebook()"><i class="fa fa-facebook fa-2x redes-sociais"></i></a>
+                         <a onclick="abrirYoutube()"><i class="fa fa-youtube fa-2x redes-sociais"></i></a>
+                         <a onclick="abrirLinkedin()"><i class="fa fa-linkedin fa-2x redes-sociais"></i></a>
+                         <a onclick="abrirEmail()"><i class="fa fa-envelope-o fa-2x redes-sociais"></i></a>
+                    </div>
+               </div>
+          </div>
+     </footer>
+     <script src="cordova.js"></script>
+     <script type="text/javascript">
+     function abrirFacebook(){
+          cordova.InAppBrowser.open('http://www.facebook.com/colibrimoveis', '_system', 'location=no');
+     }
+
+     function abrirYoutube(){
+          cordova.InAppBrowser.open('http://www.youtube.com/user/ColibriMoveis', '_system', 'location=no');
+     }
+
+     function abrirLinkedin(){
+          cordova.InAppBrowser.open('http://br.linkedin.com/company/colibri-moveis-do-brasil', '_system', 'location=no');
+     }
+
+     function abrirEmail(){
+          cordova.InAppBrowser.open('mailto:alan.matta@colibrimoveis.com.br', '_system', 'location=no');
+     }
+     </script>
+</body>
+</html>

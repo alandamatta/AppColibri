@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta charset="utf-8">
+     <title>App Colibri Móveis</title>
+     <link rel="stylesheet" href="icons/material.css">
+     <link rel="stylesheet" href="css/materialize.min.css">
+     <link rel="stylesheet" href="css/estilos.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/animsition.min.css">
+</head>
+
+<body class="corpo-produtos">
+
+
+     <!--Imports-->
+     <script src="js/jquery-3.1.1.min.js"></script>
+     <script src="js/jquery.sidebar.min.js"></script>
+     <script src="js/materialize.min.js"></script>
+     <script src="js/animsition.min.js"></script>
+     <!--Fim dos imports-->
+
+     <!--Barra superior-->
+     <div class="topo-fixo z-depth-1">
+          <!-- "desenho" da barra superior"-->
+          <nav style="background-color: #76C04D">
+               <ul id="slide-out" class="side-nav z-depth-5" style="color: BBD6AB">
+                    <li>
+                         <div class="center-align">
+                              <img src="img/logo.png" class="responsive-img logo-menu"/>
+                         </div>
+                    </li>
+                    <li><a href="index.html">Menu Principal</a></li>
+                    <li><a href="nossos-produtos.html">Produtos</a></li>
+                    <li><a href="conheca-a-colibri.html">Conheça a colibri</a></li>
+                    <li><a href="fale-conosco.html">Fale conosco</a></li>
+                    <li id="fechar-menu"><a class="red lighten-1 ">Fechar menu</a></li>
+               </ul>
+               <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+          </nav>
+          <!-- fim do "desenho" da barra superior"-->
+
+
+          <!-- "Script que habilita o menu retrátil da barra superior"-->
+          <script type="text/javascript">
+          $('.button-collapse').sideNav({
+               menuWidth: 225,//Tamanho do meu que aparecerá
+               edge: 'left',//lado que o menu aparecerá (default: left)
+               closeOnClick: true,//fecha o menu ao pressionar fora do menu
+               draggable: false//abrir menu ao arrastar da dir/esq para esq/dir
+          });
+          $('#fechar-menu').sideNav('hide');//fecha menu lateral ao pressionar link 'fechar menu'
+          </script>
+          <!-- Fim do script que habilita o menu retrátil da barra superior"-->
+
+          <!--Abas de separação de sala, quarto etc...-->
+          <ul class="tabs" style="background-color: #76C04D">
+               <li class="tab"><a class="white-text waves-effect waves-light" href="#sala">Sala</a></li>
+               <li class="tab"><a class="white-text waves-effect waves-light" href="#quarto">Quarto</a></li>
+          </ul>
+          <!--Fim das abas de separação de sala, quarto etc...-->
+
+
+
+     </div>
+     <!--Final da barra superior-->
+
+
+
+
+
+
+
+
+
+     <div>
+          <!--Conteúdo-->
+          <main class="main-telas">
+               <!--Iníncio dos produtos de sala-->
+               <div id="sala" class="section">
+                    <!--INICIA FOTOS-->
+                    <div id="card-produtos" class="row">
+                    </div>
+                    <!--FINALIZA FOTOS-->
+               </div>
+               <!--Fim da aba dos produtos de sala-->
+               <!--Aba de produtos para quarto-->
+               <div id="quarto" class="section">
+                    <div class="row">
+
+                    </div>
+               </div>
+               <!--Fim aba de produtos para quarto-->
+               <script>
+               $(document).ready(function(){
+                    $.getJSON('json/produtos.js', function(data){
+                         var tamanho = data.produtos.length;
+                         var i;
+                         var estruturaHtmlSala = "";
+                         var estruturaHtmlQuarto = "";
+                         for(i = 0; i < tamanho; i++){
+                              //var produto = data.produtos[i]; funcionando
+                              var produto = data.produtosJson[i];
+
+                              if(produto.ambiente = "sala"){
+                                   estruturaHtmlSala += '<div class="col s6 m6">' +
+                                   '<div class="card">' +
+                                   '<div class="card-image">' +
+                                   '<a class="animsition-link" href="produto.html?CodDoProd='+produto.id+ '"><img src="'+produto.foto+'"/></a>' +
+                                   '</div>' +
+
+                                   '<div class="card-content produtos">' +
+                                   '<div class="center-align">' +
+                                   '<p class="nome-produto">'+produto.nome+'</p>' +
+                                   '</div>' +
+                                   '</div>' +
+                                   '</div>' +
+                                   '</div>';
+                              }
+                         }
+                         $("#card-produtos").append(estruturaHtmlSala);
+                    });
+
+               });
+               </script>
+          </main>
+          <!--Fim do conteúdo-->
+     </div>
+
+
+
+
+
+
+     <!--Rodapé-->
+     <footer class="page-footer rodape-fixo">
+          <div class="container">
+               <div class="center-align">
+                    <div class="container">
+                         <a href="index.html"><i class="fa fa-home fa-1x redes-sociais">Menu</i></a>
+                    </div>
+               </div>
+          </div>
+     </footer>
+     <!--fim do rodapé-->
+</body>
+</html>
